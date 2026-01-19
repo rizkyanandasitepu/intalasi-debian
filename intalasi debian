@@ -1,0 +1,40 @@
+
+Persiapan Sebelum Instalasi
+
+1. Backup Data: Pastikan semua data penting telah disalin ke media eksternal, karena proses instalasi dapat menghapus data pada disk target.
+
+2. Periksa Persyaratan Sistem: Minimal membutuhkan prosesor 1 GHz, RAM 1 GB (disarankan 2 GB), dan ruang disk kosong 15 GB. Untuk desktop dasar, disarankan RAM 2 GB dan ruang disk 10 GB lebih banyak.
+
+3. Unduh ISO Debian: Kunjungi situs resmi Debian dan pilih versi sesuai arsitektur komputer (misalnya amd64 untuk PC modern). Anda bisa memilih image instalasi jaringan (netinst) yang lebih kecil atau image lengkap CD/DVD.
+
+4. Buat Media Instalasi yang Bisa Dijalankan: Gunakan alat seperti Rufus atau Etcher untuk menulis file ISO ke flashdisk USB. Pastikan kapasitas flashdisk minimal 4 GB.
+
+5. Atur Urutan Boot: Masuk ke pengaturan BIOS/UEFI komputer Anda dan ubah urutan boot agar USB drive menjadi prioritas pertama.
+
+Proses Instalasi
+
+1. Boot dari Media Instalasi: Restart komputer dan biarkan booting dari USB drive. Setelah itu akan muncul menu bootloader, pilih "Install" atau "Graphical Install" lalu tekan Enter.
+
+2. Pilih Bahasa, Negara, dan Tata Letak Keyboard: Ikuti petunjuk di layar untuk memilih bahasa yang ingin digunakan, lokasi geografis Anda, dan tata letak keyboard yang sesuai.
+
+3. Deteksi Perangkat Keras dan Konfigurasi Jaringan: Instaler akan secara otomatis mendeteksi perangkat keras komputer dan mencoba mengkonfigurasi jaringan menggunakan DHCP. Jika tidak ada DHCP, Anda bisa mengatur jaringan secara manual.
+
+4. Atur Kata Sandi dan Akun Pengguna: Anda akan diminta untuk membuat kata sandi untuk akun root (administrator) dan membuat akun pengguna biasa. Jika tidak mengatur kata sandi root, akun ini akan dinonaktifkan dan paket sudo akan diinstal untuk memberikan hak akses administratif pada pengguna pertama.
+
+5. Konfigurasi Jam dan Zona Waktu: Instaler akan mencoba menyinkronkan jam dengan server waktu internet. Pilih zona waktu yang sesuai dengan lokasi Anda.
+
+6. Partisi Disk: Anda bisa memilih opsi partisi otomatis (direkomendasikan untuk pemula) yang akan menggunakan seluruh disk atau ruang kosong yang tersedia. Jika ingin mengatur partisi secara manual, Anda bisa membuat partisi root (/), swap, dan direktori rumah (/home) sesuai kebutuhan. Jika ingin dual boot dengan Windows, pastikan untuk tidak menghapus partisi Windows saat proses partisi.
+
+7. Instal Sistem Dasar dan Konfigurasi Paket: Instaler akan mengunduh dan menginstal komponen sistem dasar. Setelah itu, Anda akan diminta untuk mengkonfigurasi manajer paket APT dan memilih paket perangkat lunak yang ingin diinstal (misalnya desktop environment seperti GNOME, KDE, atau XFCE).
+
+8. Instal Bootloader GRUB: Pilih lokasi untuk menginstal bootloader GRUB (biasanya pada master boot record atau partisi EFI) agar komputer dapat menjalankan Debian saat dinyalakan.
+
+9. Selesaikan Instalasi: Setelah proses instalasi selesai, cabut media instalasi dan restart komputer.
+
+Setelah Instalasi
+
+1. Perbarui Sistem: Setelah pertama kali boot, buka terminal dan jalankan perintah sudo apt update && sudo apt upgrade untuk memperbarui semua paket ke versi terbaru.
+
+2. Instal Driver Tambahan: Jika ada perangkat keras yang tidak berfungsi dengan benar, instal driver yang sesuai melalui manajer paket atau situs resmi produsen.
+
+3. Instal Perangkat Lunak Tambahan: Gunakan APT atau Pusat Perangkat Lunak Debian untuk menginstal aplikasi yang Anda butuhkan, seperti browser web, pengolah kata, atau alat perkantoran.
